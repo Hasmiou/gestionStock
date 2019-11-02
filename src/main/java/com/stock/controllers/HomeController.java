@@ -1,4 +1,4 @@
-package com.stock.main;
+package com.stock.controllers;
 
 import java.text.DateFormat;
 import java.util.Date;
