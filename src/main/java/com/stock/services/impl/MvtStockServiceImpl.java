@@ -4,31 +4,27 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stock.dao.IArticleDao;
-import com.stock.entities.Article;
-import com.stock.services.IArticleService;
+import com.stock.dao.IMvtStockDao;
+import com.stock.dao.impl.MvtStockDaoImpl;
+import com.stock.entities.MvtStock;
+import com.stock.services.IMvtStockService;
 
 @Transactional
-public class ArticleServiceImpl implements IArticleService{
+public class MvtStockServiceImpl implements IMvtStockService{
 	
-	private IArticleDao dao;
-	
-	/*
-	public ArticleServiceImpl(ArticleDaoImpl dao) {
-		this.dao = dao;
-	}*/
+	private IMvtStockDao dao;
 
-	public void setDao(IArticleDao dao) {
+	public MvtStockServiceImpl(MvtStockDaoImpl dao) {
 		this.dao = dao;
 	}
 
 	@Override
-	public Article save(Article entity) {
+	public MvtStock save(MvtStock entity) {
 		return dao.save(entity);
 	}
 
 	@Override
-	public Article update(Article entity) {
+	public MvtStock update(MvtStock entity) {
 		return dao.update(entity);
 	}
 
@@ -39,27 +35,27 @@ public class ArticleServiceImpl implements IArticleService{
 	}
 
 	@Override
-	public Article findOneById(Long id) {
+	public MvtStock findOneById(Long id) {
 		return dao.findOneById(id);
 	}
 
 	@Override
-	public Article findOneBy(String field, Object value) {
+	public MvtStock findOneBy(String field, Object value) {
 		return dao.findOneBy(field, value);
 	}
 
 	@Override
-	public Article findOneBy(String[] fields, Object[] values) {
+	public MvtStock findOneBy(String[] fields, Object[] values) {
 		return dao.findOneBy(fields, values);
 	}
 
 	@Override
-	public List<Article> findAll() {
+	public List<MvtStock> findAll() {
 		return dao.findAll();
 	}
 
 	@Override
-	public List<Article> findAllSortedBy(String field, String order) {
+	public List<MvtStock> findAllSortedBy(String field, String order) {
 		return dao.findAllSortedBy(field, order);
 	}
 
