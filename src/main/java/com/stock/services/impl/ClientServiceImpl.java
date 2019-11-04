@@ -13,8 +13,8 @@ import com.stock.services.IClientService;
 public class ClientServiceImpl implements IClientService{
 	
 	private IClientDao dao;
-	
-	public ClientServiceImpl(ClientDaoImpl dao) {
+
+	public void setDao(IClientDao dao) {
 		this.dao = dao;
 	}
 

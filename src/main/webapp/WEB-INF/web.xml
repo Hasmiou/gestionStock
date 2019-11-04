@@ -10,6 +10,12 @@
 		<param-value>classpath*:applicationContext.xml</param-value>
 	</context-param>
 	
+	<!-- Définition des langues -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+		<param-value>i18n.applicationResources</param-value>
+	</context-param>
+	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>

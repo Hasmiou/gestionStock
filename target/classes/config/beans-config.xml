@@ -13,5 +13,10 @@
 	<bean id="articleService" class="com.stock.services.impl.ArticleServiceImpl">
 		<property name="dao" ref="articleDao"></property>
 	</bean>
+	
+	<bean id="clientDao" class="com.stock.dao.impl.ClientDaoImpl"/>
+	<bean id="clientService" class="com.stock.services.impl.ClientServiceImpl">
+		<property name="dao" ref="clientDao"></property>
+	</bean>
 
 </beans>

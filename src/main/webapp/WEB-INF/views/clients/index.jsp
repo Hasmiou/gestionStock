@@ -1,3 +1,4 @@
+<%@page import="com.stock.entities.Client"%>
 <%@ include file="/WEB-INF/views/includes/includes.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Blank Page</title>
+  <title>Clients | Gestion Stock</title>
 
   <!-- Custom fonts for this template-->
   <link href="<%= request.getContextPath() %>/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,6 +21,8 @@
   <!-- Custom styles for this template-->
   <link href="<%= request.getContextPath() %>/resources/css/sb-admin.css" rel="stylesheet">
 
+  <!-- Page level plugin CSS-->
+  <link href="<%= request.getContextPath() %>/resources/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -42,15 +45,59 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
           <c:url value="/home/" var="home"/>
-            <a href="${home}">Dashboard</a>
+            <a href="${home}"><fmt:message key="common.dashboard"/></a>
           </li>
-          <li class="breadcrumb-item active">Blank Page</li>
+          <li class="breadcrumb-item active"><fmt:message key="common.customer"/></li>
         </ol>
 
         <!-- Page Content -->
-        <h1>Blank Page</h1>
+        <h1><fmt:message key="customer.list"/></h1>
         <hr>
-        <p>This is a great starting point for new custom pages.</p>
+        <!-- Breadcrumbs-->
+        <div class="breadcrumb"></div>
+        
+         <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            	<fmt:message key="customer.list"/>
+            </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th><fmt:message key="common.firstname"/></th>
+                    <th><fmt:message key="common.lastname"/></th>
+                    <th><fmt:message key="common.email"/></th>
+                    <th><fmt:message key="common.address"/></th>
+                    <th><fmt:message key="common.action"/></th>
+                  </tr>
+                </thead>
+                <tfoot>
+                  <tr>
+                    <th><fmt:message key="common.firstname"/></th>
+                    <th><fmt:message key="common.lastname"/></th>
+                    <th><fmt:message key="common.email"/></th>
+                    <th><fmt:message key="common.address"/></th>
+                    <th><fmt:message key="common.action"/></th>
+                  </tr>
+                </tfoot>
+                <tbody>
+                  <c:forEach items="${clients}" var="client">
+	                  <tr>
+	                    <td>${client.getNom()}</td>
+	                    <td>${client.getPrenom()}</td>
+	                    <td>Pas d'email</td>
+	                    <td>${client.getAdresse()}</td>
+	                    <td>...</td>
+	                  </tr>
+                  </c:forEach>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
 
       </div>
       <!-- /.container-fluid -->
@@ -104,6 +151,14 @@
   <!-- Custom scripts for all pages-->
   <script src="<%= request.getContextPath() %>/resources/js/sb-admin.min.js"></script>
 
+  <!-- Page level plugin JavaScript-->
+  <script src="<%= request.getContextPath() %>/resources/vendor/datatables/jquery.dataTables.js"></script>
+  <script src="<%= request.getContextPath() %>/resources/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Demo scripts for this page-->
+  <script src="<%= request.getContextPath() %>/resources/js/demo/datatables-demo.js"></script>
+  
+  
 </body>
 
 </html>

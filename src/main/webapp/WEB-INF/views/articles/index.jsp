@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>SB Admin - Blank Page</title>
+  <title><fmt:message key="common.product"/>|Gestion Stock</title>
 
   <!-- Custom fonts for this template-->
   <link href="<%= request.getContextPath() %>/resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -42,13 +42,13 @@
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
           <c:url value="/home/" var="home"/>
-            <a href="${home}">Dashboard</a>
+            <a href="${home}"><fmt:message key="common.dashboard"/></a>
           </li>
-          <li class="breadcrumb-item active">Blank Page</li>
+          <li class="breadcrumb-item active"><fmt:message key="common.product"/></li>
         </ol>
 
         <!-- Page Content -->
-        <h1>Blank Page</h1>
+        <h1><fmt:message key="common.product"/></h1>
         <hr>
         <p>This is a great starting point for new custom pages.</p>
 
