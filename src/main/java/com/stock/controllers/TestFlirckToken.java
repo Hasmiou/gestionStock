@@ -13,7 +13,7 @@ public class TestFlirckToken {
 		//flickr.getToken();
 		
 		try {
-			InputStream stream = new FileInputStream(new File("D:\\coder-icon-26.jpg"));
+			InputStream stream = new FileInputStream(new File("D:\\pho.jpg"));
 			String url = flickr.upload(stream, "coder");
 			System.out.println("Photo added "+url);
 		} catch (Exception e) {

@@ -27,10 +27,28 @@ public class Client implements Serializable {
 	
 	private String adresse;
 	
+	private String email;
+	
 	private String photo;
 	
 	@OneToMany(mappedBy = "client")
 	private List<CommandeClient> commandeClients;
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public List<CommandeClient> getCommandeClients() {
+		return commandeClients;
+	}
+
+	public void setCommandeClients(List<CommandeClient> commandeClients) {
+		this.commandeClients = commandeClients;
+	}
 
 	public long getIdClient() {
 		return idClient;

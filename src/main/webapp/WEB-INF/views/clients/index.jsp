@@ -54,7 +54,24 @@
         <h1><fmt:message key="customer.list"/></h1>
         <hr>
         <!-- Breadcrumbs-->
-        <div class="breadcrumb"></div>
+        <ol class="breadcrumb">
+        	<c:url value="/client/new/" var="newClient"/>
+        	<li><a href="${newClient}">
+        		<i class="fas fa-plus"></i>
+        		<fmt:message key="common.new"/>
+        		</a>
+        	</li>&nbsp;|&nbsp;
+        	<li><a href="">
+        		<i class="fa fa-download"></i>
+        		<fmt:message key="common.export"/>
+        		</a>
+        	</li>&nbsp;|&nbsp;
+        	<li><a href="">
+        		<i class="fa fa-upload"></i>
+        		<fmt:message key="common.import"/>
+        		</a>
+        	</li>
+        </ol>
         
          <!-- DataTables Example -->
         <div class="card mb-3">
@@ -88,9 +105,16 @@
 	                  <tr>
 	                    <td>${client.getNom()}</td>
 	                    <td>${client.getPrenom()}</td>
-	                    <td>Pas d'email</td>
+	                    <td>${client.getEmail()}</td>
 	                    <td>${client.getAdresse()}</td>
-	                    <td>...</td>
+	                    <td>
+			        		<a href="" alt="Edit" title="Edit">
+				        		<i class="fa fa-edit"></i>
+			        		</a>&nbsp;|&nbsp;
+			        		<a href="" alt="Delete" title="Delete">
+				        		<i class="fa fa-trash text-danger"></i>
+			        		</a>
+	                    </td>
 	                  </tr>
                   </c:forEach>
                 </tbody>
